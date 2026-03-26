@@ -647,8 +647,8 @@ Always save the final report as a .md file. Be thorough, organized, and cite sou
                     "Calculate and analyze prime numbers up to 1000",
                     "Research top open-source LLMs in 2024"]
         ec = st.columns(4)
-        for col, ex in zip(ec, examples):
-            if col.button(ex[:28]+"…", key=f"aex_{ex[:8]}", use_container_width=True):
+        for i,ex in enumerate(examples):
+            if col.button(ex[:28]+"…", key=f"aex_{i}_{ex[:8]}", use_container_width=True):
                 st.session_state["agent_prefill"] = ex
                 st.rerun()
 
